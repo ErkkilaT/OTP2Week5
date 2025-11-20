@@ -26,9 +26,9 @@ class AppTest {
 
         String output = out.toString();
 
-        String expected ="i = 1\r\n"
-        + "i = 2\r\n"
-         +"i = 3\r\n";
-        assertEquals(expected, output);
+        String expected ="i = 1\n"
+        + "i = 2\n"
+         +"i = 3\n";
+        assertEquals(expected.replace("\r",""), output.replace("\r",""));
     }
 }
