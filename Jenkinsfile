@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/ADirin/sep2_week5_inclass_s2.git'
+                git branch: 'master', url: 'https://github.com/ErkkilaT/OTP2Week5.git'
             }
         }
 
@@ -28,7 +28,29 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
 
+        stage('Code Coverage') {
+            steps {
+                bat 'mvn jacoco:report'
+            }
+        }
+
+        stage('Publish Test Results') {
+            steps {
+                junit '**/target/surefire-reports/*.xml'
+            }
+        }
+
+        stage('Publish Coverage Report') {
+            steps {
+                jacoco()
+            }
+        }
         stage('SonarQube Analysis') {
                     steps {
                         withSonarQubeEnv('SonarQubeServer') {
