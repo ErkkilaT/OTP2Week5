@@ -9,7 +9,7 @@ pipeline {
            JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'  // Adjust to your actual JDK pat
         SONARQUBE_SERVER = 'SonarQubeServer'  // The name of the SonarQube server configured in Jenkins
         SONAR_TOKEN = 'sqa_e17c1bc4255956d55dacf5d5d478cd70d177145b' // Store the token securely
-        DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
+        DOCKERHUB_CREDENTIALS_ID = 'Docker_hub'
         DOCKERHUB_REPO = 'oomis1/otp2week5'
         DOCKER_IMAGE_TAG = 'latest'
 
